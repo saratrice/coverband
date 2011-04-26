@@ -1,0 +1,12 @@
+<%= form_for @cover_band_name do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :band %><br />
+    <%= f.text_field :band %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

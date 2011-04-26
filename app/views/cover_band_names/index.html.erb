@@ -1,0 +1,17 @@
+<% title "___ is the name of my ___ cover band" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Band</th>
+  </tr>
+  <% for cover_band_name in @cover_band_names %>
+    <tr>
+      <td><%= cover_band_name.name %></td>
+      <td><%= cover_band_name.band %></td>
+      <td><%= star_rating_for(cover_band_name) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Cover Band Name", new_cover_band_name_path %></p>

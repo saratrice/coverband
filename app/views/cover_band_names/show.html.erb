@@ -1,0 +1,16 @@
+<% title "Cover Band Name" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cover_band_name.name %>
+</p>
+<p>
+  <strong>Band:</strong>
+  <%= @cover_band_name.band %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_cover_band_name_path(@cover_band_name) %> |
+  <%= link_to "Destroy", @cover_band_name, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", cover_band_names_path %>
+</p>
