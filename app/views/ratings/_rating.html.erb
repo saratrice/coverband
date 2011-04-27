@@ -1,0 +1,13 @@
+<div id="star-ratings-block_<%= asset.id %>" class="star-ratings-block">
+  <ul class='star-rating'>
+  <li class='current-rating' style='width:<%= (asset.average_rating * 30).to_i -%>px;'></li>
+  <% (1..5).each do |i| %>
+  <li>
+    <%= link_to (i, ratings_create_path(:cover_band_name_id => asset.id, :rating => i), :class => "#{number_to_word(i)}-stars", :name => "#{pluralize(i, 'star')} out of 5", :remote => true) %> 
+  </li>
+  <% end -%>
+</ul>
+    <%= " (my rating: #{asset.rated_by?(current_user).rate.score})" if current_user && asset.rated_by?(current_user) %>
+</div>
+<div id="block_<%= asset.id %>" class="rating_thanks"> </div>
+<div id="error" class="rating_thanks"> </div>

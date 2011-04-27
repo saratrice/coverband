@@ -2,7 +2,10 @@ class CoverBandNamesController < ApplicationController
   load_and_authorize_resource
   
   def index
-    @cover_band_names = CoverBandName.all
+    # @cover_band_names = CoverBandName.all
+    # @cover_band_name = CoverBandName.order('rand()').first
+    offset = rand(CoverBandName.count)
+    @cover_band_name = CoverBandName.first(:offset => offset)
   end
 
   def show

@@ -1,12 +1,30 @@
 class RatingsController < ApplicationController
-  before_filter :require_user
-  def rate
-    @asset = Item.find(params[:id])
-    Rating.delete_all(["rateable_type = 'CoverBandName' AND rateable_id = ? AND user_id = ?", @asset.id, current_user.id])
-    @asset.rate_it(params[:rating], current_user.id)
-    render :update do |page|
-      page.replace_html 'star-ratings-block', :partial => 'ratings/rating', :locals => { :asset => @asset }
-      page.visual_effect :highlight, 'rate'
+  def index
+    @rateable = find_rateable
+    @ratings = @rateable.ratings
+  end
+
+  def create
+    if current_user
+      @rateable = find_rateable
+      @rateable.rate_it( params[:rating], current_user.id )
+    else
+      @error = "You must be logged in to vote!"
+    end
+    respond_to do |format|
+      format.js
     end
   end
+  
+  private
+  
+  def find_rateable
+    params.each do |name, value|
+      if name =~ /(.+)_id$/
+        return $1.classify.constantize.find(value)
+      end
+    end
+    nil
+  end
+
 end

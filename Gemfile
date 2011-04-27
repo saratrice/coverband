@@ -48,3 +48,6 @@ gem 'cancan'
 
 # profanity
 gem 'profanity_filter'
+
+# javascript
+gem 'jquery-rails'

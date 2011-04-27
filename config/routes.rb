@@ -1,4 +1,8 @@
 Coverband::Application.routes.draw do
+  get "ratings/index"
+
+  get "ratings/create"
+
   resources :cover_band_names
 
   get "welcome/index"
