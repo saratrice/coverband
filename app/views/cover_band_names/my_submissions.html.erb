@@ -1,0 +1,8 @@
+<% for band in @cover_band_names %>
+<div class="span-16 large prepend-4 append-4">
+  <div style="text-align:center" class="loud notice">
+    <%= band.name %> is the name of my <%= band.band %> cover band.<br />
+    Current rating: <%= band.average_rating %>
+  </div> 
+</div>
+<% end -%>

@@ -1,4 +1,4 @@
-<div id="star-ratings-block_<%= asset.id %>" class="star-ratings-block">
+<div id="star-ratings-block_<%= asset.id %>" class="star-ratings-block span-4 prepend-10 append-10">
   <ul class='star-rating'>
   <li class='current-rating' style='width:<%= (asset.average_rating * 30).to_i -%>px;'></li>
   <% (1..5).each do |i| %>
@@ -10,4 +10,4 @@
     <%= " (my rating: #{asset.rated_by?(current_user).rate.score})" if current_user && asset.rated_by?(current_user) %>
 </div>
 <div id="block_<%= asset.id %>" class="rating_thanks"> </div>
-<div id="error" class="rating_thanks"> </div>
+<div id="error" style="overflow:auto"></div>

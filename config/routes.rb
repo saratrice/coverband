@@ -3,7 +3,9 @@ Coverband::Application.routes.draw do
 
   get "ratings/create"
 
-  resources :cover_band_names
+  resources :cover_band_names do
+     get 'my_submissions', :on => :collection
+  end
 
   get "welcome/index"
 

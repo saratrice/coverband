@@ -1,14 +1,18 @@
-<span style="text-align:center;"><h2>___ is the name of my ___ cover band</h2></span>
+<div class="span-16 large prepend-4 append-4">
+  <div style="text-align:center" class="loud"><%= @cover_band_name.name %> is the name of my <%= @cover_band_name.band %> cover band.</div> 
+</div>
+
+<%= render :partial => "ratings/rating", :locals => {:asset => @cover_band_name} %>
 
 
-<%= @cover_band_name.name %> is the name of my <%= @cover_band_name.band %> cover band. <%= render :partial => "ratings/rating", :locals => {:asset => @cover_band_name} %>
-
-<p><%= link_to "Want to see another?", root_path %></p>
+<div class="span-24" style="text-align:center;padding-top:20px">
+<%= link_to "Want to see another?", root_path %>
 
 <p>
-  <%  if current_user %>
+  <% if current_user %>
     <%= link_to "Submit yours!", new_cover_band_name_path %>
   <% else %>
     <%= link_to "Sign up to start submitting!", new_user_registration_path %>
   <% end %>  
 </p>
+</div>
