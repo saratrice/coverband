@@ -3,7 +3,7 @@
     <li class='current-rating' style='width:<%= (asset.average_rating * 30).to_i -%>px;'></li>
     <% (1..5).each do |i| %>
       <li>
-        <%= link_to (i, ratings_create_path(:cover_band_name_id => asset.id, :rating => i), :class => "#{number_to_word(i)}-stars", :name => "#{pluralize(i, 'star')} out of 5", :remote => true) %> 
+        <%= link_to(i, ratings_create_path(:cover_band_name_id => asset.id, :rating => i), :class => "#{number_to_word(i)}-stars", :name => "#{pluralize(i, 'star')} out of 5", :remote => true) %> 
       </li>
     <% end -%>
   </ul>

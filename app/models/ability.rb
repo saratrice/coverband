@@ -5,14 +5,11 @@ class Ability
     
     user = user || User.new # for guest
     
-    can :read, CoverBandName
-    
     if user.role? :user
-      can [:create], CoverBandName
-    end
-    
-    if user.role? :admin
-      can :read, :all
+      can :manage, CoverBandName, :user_id => user.id
+      can :read, CoverBandName
+      can :manage, User, :user_id => user.id
+    elsif user.role? :admin
       can :manage, :all             # allow superadmins to do anything
       can :access, :rails_admin     # only allow admin users to access Rails Admin
     end
