@@ -1,3 +1,5 @@
-Just a demo project. Currently half-finished. 
+A fun little demo project. Mostly finished, still needs some more styling, a few more features, and more testing.
 
 Goal: Create a site where people can post their version of "___ is the name of my ___ cover band." Users will be able to log in, rate postings, and track their own submissions.
+
+Currently the site demo is on Heroku at http://glowing-sunset-353.heroku.com/
