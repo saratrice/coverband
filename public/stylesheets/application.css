@@ -1,10 +1,33 @@
 .heading {
   text-align:center;
-  margin-top:20px;
+  margin:20px 0px 0px 0px;
   padding:20px;
   background-color:black;
   color:white;
   cursor:pointer;
+}
+
+.nav {
+  text-align:right;
+  margin-bottom:40px;
+}
+
+.nav a {
+  text-decoration:none;
+  color:black;
+}
+
+.refresh {
+  border:none;
+  vertical-align: -5px;
+}
+
+#new_cover_band_name {
+  text-align:center;
+}
+
+.footer {
+  margin-top:20px;
 }
 
 .star-rating,

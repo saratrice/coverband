@@ -1,19 +1,12 @@
-<div class="span-16 large prepend-4 append-4">
-  <div style="text-align:center" class="loud"><%= @cover_band_name.name %> is the name of my <%= @cover_band_name.band %> cover band.</div> 
+<div class="span-16 large prepend-4 append-4" style="margin-bottom: 0px;">
+  <div style="text-align:center" class="large">
+    <%= @cover_band_name.name %> is the name of my <%= @cover_band_name.band %> cover band. 
+    
+    <%= link_to image_tag("/images/refresh.jpg", :class => :refresh), root_path, :title => "Click for random" %>
+  </div> 
 </div>
 
 <%= render :partial => "ratings/rating", :locals => {:asset => @cover_band_name} %>
 
 <%= render :partial => "social", :locals => {:band => @cover_band_name} %>
 
-<div class="span-24" style="text-align:center;padding-top:20px">
-<%= link_to "Want to see another?", root_path %>
-
-<p>
-  <% if current_user %>
-    <%= link_to "Submit yours!", new_cover_band_name_path %>
-  <% else %>
-    <%= link_to "Sign up to start submitting!", new_user_registration_path %>
-  <% end %>  
-</p>
-</div>

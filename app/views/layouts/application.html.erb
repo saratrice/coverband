@@ -20,16 +20,18 @@
           <%= content_tag :div, msg, :class => "#{name}" %>
         <% end %>
         <h2 class="heading" onclick="location.href='/'">&#9608;&#9608;&#9608;&#9608;&#9608; is the name of my &#9608;&#9608;&#9608;&#9608;&#9608; cover band</h2>
+        <div class="nav span-10 prepend-14">
+          <% if current_user %>
+            <%= link_to "Submit yours!", new_cover_band_name_path %> | <%= link_to "View Your Submissions", my_submissions_cover_band_names_path %> | <%= link_to "Edit Your Profile", edit_user_registration_path(current_user) %> | <%= link_to "Sign Out", destroy_user_session_path %>
+          <% else %>
+            <%= link_to "Sign In", new_user_session_path %> or <%= link_to "Register to Start Submitting", new_user_registration_path %>
+          <% end %>
+        </div>
 
         <%= yield %>
         
-        <div style="text-align:center">
-          <% if current_user %>
-              <p><%= link_to "View Your Submissions", my_submissions_cover_band_names_path %> | <%= link_to "Edit Your Profile", edit_user_registration_path(current_user) %> | <%= link_to "Sign Out", destroy_user_session_path %></p>
-          <% end -%>
-          <p><%= link_to "Where did this come from?", "http://knowyourmeme.com/memes/x-is-the-name-of-my-y-cover-band" %></p>
-          <p><%= link_to "Who did this?", "http://saratrice.com" %></p>
-
+        <div class="footer span-9 prepend-8 append-7">
+          <p><%= link_to "Where did this meme come from?", "http://knowyourmeme.com/memes/x-is-the-name-of-my-y-cover-band" %> | <%= link_to "Who created this site?", "http://saratrice.com" %></p>
         </div>
 
       </div>

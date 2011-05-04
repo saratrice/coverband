@@ -1,12 +1,5 @@
 <%= form_for @cover_band_name do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :band %><br />
-    <%= f.text_field :band %>
-  </p>
-  <p><%= f.submit %></p>
+    <%= f.text_field :name %> is the name of my <%= f.text_field :band %> cover band
+  <p><%= f.submit "Submit" %></p>
 <% end %>
