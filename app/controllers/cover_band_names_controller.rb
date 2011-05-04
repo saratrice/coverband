@@ -8,9 +8,9 @@ class CoverBandNamesController < ApplicationController
     @cover_band_name = CoverBandName.first(:offset => offset)
   end
 
-  # def show
-  #   @cover_band_name = CoverBandName.find(params[:id])
-  # end
+  def show
+    @cover_band_name = CoverBandName.find(params[:id])
+  end
 
   def new
     @cover_band_name = CoverBandName.new

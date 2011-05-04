@@ -4,6 +4,7 @@
 
 <%= render :partial => "ratings/rating", :locals => {:asset => @cover_band_name} %>
 
+<%= render :partial => "social", :locals => {:band => @cover_band_name} %>
 
 <div class="span-24" style="text-align:center;padding-top:20px">
 <%= link_to "Want to see another?", root_path %>

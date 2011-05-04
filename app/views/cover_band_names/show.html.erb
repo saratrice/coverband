@@ -1,16 +1,7 @@
-<% title "Cover Band Name" %>
+<div class="span-16 large prepend-4 append-4">
+  <div style="text-align:center" class="loud"><%= @cover_band_name.name %> is the name of my <%= @cover_band_name.band %> cover band.</div> 
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @cover_band_name.name %>
-</p>
-<p>
-  <strong>Band:</strong>
-  <%= @cover_band_name.band %>
-</p>
+<%= render :partial => "ratings/rating", :locals => {:asset => @cover_band_name} %>
 
-<p>
-  <%= link_to "Edit", edit_cover_band_name_path(@cover_band_name) %> |
-  <%= link_to "Destroy", @cover_band_name, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", cover_band_names_path %>
-</p>
+<%= render :partial => "social", :locals => {:band => @cover_band_name} %>
