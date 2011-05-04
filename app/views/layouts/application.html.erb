@@ -19,7 +19,7 @@
         <% flash.each do |name, msg| %>
           <%= content_tag :div, msg, :class => "#{name}" %>
         <% end %>
-        <h2 class="heading" onclick="location.href='/'" style="cursor:pointer;">&#9608;&#9608;&#9608;&#9608;&#9608; is the name of my &#9608;&#9608;&#9608;&#9608;&#9608; cover band</h2>
+        <h2 class="heading" onclick="location.href='/'">&#9608;&#9608;&#9608;&#9608;&#9608; is the name of my &#9608;&#9608;&#9608;&#9608;&#9608; cover band</h2>
 
         <%= yield %>
         

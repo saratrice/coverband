@@ -1,8 +1,10 @@
 .heading {
   text-align:center;
   margin-top:20px;
+  padding:20px;
   background-color:black;
   color:white;
+  cursor:pointer;
 }
 
 .star-rating,
